@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+    <title>Sum of Numbers</title>
+</head>
+<body>
+    <main>
+        <h1>Sum of Numbers</h1>
+        <script>
+            let another_sum = 1;
+            while (another_sum) {
+                let valid_num = 0; //False
+                let input = 0;
+
+                // Get a valid input from the user
+                while (!valid_num) {
+                    input = parseInt(prompt("Enter any top number to sum from 1 to 100"));
+                    if (input != NaN) {
+                        if ((input >= 1) && (input <= 100)) valid_num = 1;
+                    }
+                    if (!valid_num) alert("Please enter a number between 1 and 100");
+                }
+
+                //Sum the numbers
+                let total = 0;
+                let i = 1;
+                do {
+                    total += i;
+                    i++;
+                } while (i <= input)
+
+                //Output it to the screen
+                let p = document.createElement('p');
+                p.textContent = "The sum of numbers from 1 to "+input+" is "+total;
+                document.body.appendChild(p);
+                
+                //Ask the user if they'd like to do another value
+                if ("y" != prompt("Do another sum?")) another_sum = 0;
+            }
+        </script>
+    </main>
+</body>
+</html>
